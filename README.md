@@ -4,7 +4,7 @@ In this assignment, you will implement several more advanced selection and manip
 
 ## Submission Information
 
-You should fill out this information before submitting your assignment.  Make sure to document the name and source of any third party assets such as 3D models, textures, or any other content used that was not solely written by you.  Include sufficient detail for the instructor or TA to easily find them, such as a download link.
+You should fill out this information before submitting your assignment.  Make sure to document the name and source of any third party assets such as 3D models, textures, or any other content used that was not solely written by you.  Include sufficient detail for the instructor or TA to easily find them, such as a download link. **Note that this assignment is a 3 week assignment**.
 
 Name: 
 
@@ -14,13 +14,13 @@ Third Party Assets:
 
 ## Getting Started
 
-Clone the assignment using GitHub Classroom.  The project has been configured for the Oculus Quest, and the Oculus Integration package has already been imported.
+Clone the assignment using GitHub Classroom.  The project has been configured for the Oculus Quest, and the Oculus Integration package has already been imported. There is a scene titled "assignment4" in the Scenes folder that has a scene already created that you should use. This scene has a bunch of low-poly assets that create a playground. Pretty much all of the assets (except for the ground, rocks, grass, flowers, etc.) have a collider on them and a "grabbable" tag.
 
 ## Rubric
 
 Graded out of 20 points. 
 
-1. Add both controller objects and implement a **Fishing Reel** variant of the pointing technique (see Lecture 13 slide 9) on the right controller. This should include a visible laser pointer that originates at the right controller. When it intersects an object with the "grabbable" tag and the user pulls the trigger, the object should be considered "grabbed" until the user lets go of the trigger (see Lecture 14).  When an object is grabbed, the user should be able to move the object by rotating the controller. That is, when a controller has a grabbed object, that object should always be the same distance from the controller along the controller's forward vector. In addition, the user should be able to translate the object forwards and backwards along the ray using the thumbstick (Similar to how the depth ray in Lecture 16). (5)
+1. Add both controller objects and add joystick movement to the left controller thumbstick (you only need to implement virtual translation, not rotation). Implement a **Fishing Reel** variant of the pointing technique (see Lecture 13 slide 9) on the right controller. This should include a visible laser pointer that originates at the right controller. When it intersects an object with the "grabbable" tag and the user pulls the trigger, the object should be considered "grabbed" until the user lets go of the trigger (see Lecture 14).  When an object is grabbed, the user should be able to move the object by rotating the controller. That is, when a controller has a grabbed object, that object should always be the same distance from the controller along the controller's forward vector. In addition, the user should be able to translate the object forwards and backwards along the ray using the thumbstick (Similar to how the depth ray in Lecture 16). (5)
 1. The user should be able to turn the Fishing Reel technique on and off using the A button on the right controller or the X button on the left controller.  Pressing either button should toggle the Fishing Reel technique. (1)
 1. Implement the **Go-Go** grasping technique (see Lecture 11 slides 33,34) on both controllers.  This will involve computing the distance between each controller and the headset.  For distances less than some threshold *d*, the location of the controller should match the user's hand to allow them to easily grab nearby objects that have the "grabbable" tag.  For distances greater than *d*, the hand should be scaled forward to extend the user's reach.  You should experiment with different values for *d* and the distance scale factor to settings that work comfortably. Lecture 16 provides an example of using modifying the relationship between the virtual and physical controllers using a a gain parameter. This will be similar, but the gain paramter will depend on *d*. (4)
 1. The user should be able to cycle between the Go-Go technique and the Fishing Reel technique using the A button on the right controller or the X button on the left controller.  When the Go-Go technique is deactivated, it should be deactivated for *both* hands. (2)
